@@ -1,0 +1,76 @@
+// *************************************
+//
+//   Base
+//   -> Base-level tags (body, p, etc.)
+//
+// *************************************
+
+html {
+  height: 100%;
+}
+
+body {
+  background: $base-background;
+  color: $base-color;
+  font-family: $base-fontFamily;
+  font-size: 100%;
+  height: 100%;
+  line-height: $base-lineHeight;
+}
+
+// -------------------------------------
+//   Block Content
+// -------------------------------------
+
+p {
+  font-size: $base-fontSize;
+}
+
+// -------------------------------------
+//   Inline Content
+// -------------------------------------
+
+a {
+  @include transition-property(opacity);
+  @include transition-duration(100ms);
+  @include transition-timing-function(linear);
+
+  color: $base-link-color;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    opacity: 0.8;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+// -------------------------------------
+//   Media queries
+// -------------------------------------
+
+@media all and (orientation: landscape) and (max-width: 900px) {
+  body {
+    font-size: ($base-fontSize * 0.4);
+  }
+}
+
+@media all and (orientation: portrait) and (max-width: 700px) {
+  body {
+    font-size: ($base-fontSize * 0.8);
+  }
+}
+
+@media all and (min-width: 701px) {
+  body {
+    font-size: ($base-fontSize * 1.2);
+  }
+}
+
+@media all and (min-width: 801px) {
+  body {
+    font-size: ($base-fontSize * 1.4);
+  }
+}

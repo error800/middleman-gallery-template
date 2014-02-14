@@ -1,0 +1,122 @@
+.slider {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.slides {
+	@include clearfix();
+
+	-webkit-backface-visibility: hidden;
+	-webkit-transform-style: preserve-3d;
+	height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.slide {
+  @include background-size(cover);
+
+  background-position: center;
+  background-repeat: no-repeat;
+	clear: none;
+	float: left;
+	height: 100%;
+  position: relative;
+  width: 100%;
+
+  .caption {
+    //@include single-text-shadow;
+
+    background-color: rgba($base-background, 0.7);
+    border-radius: $base-borderRadius;
+    bottom: 0; left: 0; right: 0; top: 0;
+    color: $base-color;
+    height: 70%;
+    overflow: auto;
+    padding: $base-whitespace;
+    position: absolute;
+    margin: auto;
+    //text-align: center;
+    width: 70%;
+  }
+
+  .media {
+    text-align: center;
+  }
+
+  img {
+    border: $base-border;
+    margin-bottom: $base-whitespace;
+    margin-top: $base-whitespace;
+  }
+}
+
+<% data.projects.each do |project| %>
+  #slide-<%= project.name %> {
+    background-image: url("../images/<%= project.name %>.jpg");
+  }
+<% end %>
+
+.slider-arrows {
+
+}
+
+.slider-arrow {
+  //@include single-text-shadow;
+
+  color: white;
+	display: block;
+  font-family: $c-icon-fontFamily;
+  font-size: ($base-fontSize * 3);
+	margin-bottom: -1em;
+	padding: 0.5em;
+	position: absolute;
+
+}
+
+.slider-arrow--right {
+  bottom: 50%;
+  right: 0.5%;
+}
+
+.slider-arrow--left {
+  bottom: 50%;
+  left: 0.5%;
+}
+
+.slider-nav {
+	bottom: $base-whitespace;
+	position: absolute;
+}
+
+.slider-nav__item {
+  //@include box-shadow($default-text-shadow-color 0 $default-text-shadow-v-offset $default-text-shadow-blur);
+
+	background: none;
+  border: 1px solid white;
+  border-radius: 50%;
+	clear: none;
+	display: block;
+	float: left;
+	height: 10px;
+	margin: 0 5px;
+	width: 10px;
+}
+
+.slider-nav__item:hover {
+  background: white;
+}
+
+.slider-nav__item--current {
+  background: white;
+}
+
+@media all and (max-width: 650px) {
+  .slider-nav__item {
+    height: 5px;
+    margin: 0 2px;
+    width: 5px;
+  }
+}

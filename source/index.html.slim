@@ -1,0 +1,13 @@
+---
+title: Home
+description: Home
+base_url: "."
+---
+
+.slider
+  ul.slides
+    - data.projects.each_with_index do |project, i|
+      li.slide id="slide-#{project.name}"
+        .caption
+          h1 #{project.title}
+          p #{project.text}

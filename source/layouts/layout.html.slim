@@ -1,0 +1,20 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width"
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+    meta name="description" content="#{current_page.data.description}"/
+    title #{current_page.data.title}
+    link rel="stylesheet" type="text/css" href="#{current_page.data.base_url}/assets/stylesheets/application.css"
+  body
+    == yield
+    script src="#{current_page.data.base_url}/assets/javascripts/application.js"
+    javascript:
+      $('.slider').glide({
+        autoplay: false,
+        animationDuration: 800,
+        arrowLeftText: "&#59237;",
+        arrowRightText: "&#59238;",
+        keyboard: true
+      });

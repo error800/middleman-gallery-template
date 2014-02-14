@@ -1,0 +1,57 @@
+// *************************************
+//
+//   Settings
+//   -> Fonts, Variables
+//
+// *************************************
+
+// -------------------------------------
+//   @font-face
+// -------------------------------------
+
+@font-face {
+  font-family: "OpenSans-Light";
+  src: url("../fonts/OpenSans-Light.ttf");
+}
+
+@font-face {
+  font-family: "Entypo";
+  src: url("../fonts/Entypo.ttf");
+}
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+// ----- Base Colors ----- //
+
+$base-background: black;
+$base-color: white;
+$base-link-color: $base-color;
+
+// ----- Base Borders & Box Shadows ----- //
+
+$base-border: 1px solid $base-color;
+$base-border-inverted: 1px solid $base-background;
+$base-borderRadius: 5px;
+$default-text-shadow-color: rgba($base-background, 0.6);
+$default-text-shadow-blur: 3px;
+$default-text-shadow-v-offset: 2px;
+
+// ----- Base Content ----- //
+
+$base-fontFamily: OpenSans-Light;
+$base-fontSize: 100%;
+$base-fontSize-small: ($base-fontSize * 0.8);
+$base-fontSize-large: ($base-fontSize * 1.2);
+$base-lineHeight: 1.4;
+
+// ----- Base Layout ----- //
+
+$base-whitespace: 1em;
+
+// ----- Content ----- //
+
+$c-article-maxWidth: 800px;
+$c-header-fontFamily: $base-fontFamily;
+$c-icon-fontFamily: Entypo;
